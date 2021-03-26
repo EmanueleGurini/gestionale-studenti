@@ -11,12 +11,28 @@ public interface Menu {
      */
     void stampa();
 
+    void esegui();
+
+    /**
+     * Aggiunge un nuovo oggetto di tipo Studente
+     * in un array di tipo Studente nella classe Classe
+     */
     void aggiungiStudente();
 
+    /**
+     * Aggiunge un nuovo oggetto di tipo Esame
+     * in un array di tipo Esame nella classe Studente
+     */
     void aggiungiEsame();
 
+    /**
+     *
+     */
     void calcolaMedia();
 
+    /**
+     *
+     */
     void stampaStudenti();
 
 }

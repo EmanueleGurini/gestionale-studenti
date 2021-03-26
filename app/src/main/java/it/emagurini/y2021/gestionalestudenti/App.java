@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         DefaultMenu menu = new DefaultMenu();
-        menu.stampa();
+        menu.esegui();
     }
 
 }
