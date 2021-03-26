@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class DefaultMenu implements Menu {
 
+    DefaultClasse classe;
+    Scanner in;
+
+    public DefaultMenu() {
+        this.classe = new DefaultClasse();
+        this.in = new Scanner(System.in);
+    }
+
+
     @Override
     public void stampa() {
         System.out.println("Menu:");
@@ -14,7 +23,6 @@ public class DefaultMenu implements Menu {
     }
 
     public void esegui() {
-        Scanner in = new Scanner(System.in);
         String option = null;
         do {
             stampa();
@@ -28,7 +36,13 @@ public class DefaultMenu implements Menu {
 
     @Override
     public void aggiungiStudente() {
-
+        System.out.println("Aggiungi nome:");
+        String nome = in.nextLine();
+        System.out.print("Aggiungi cognome:");
+        String cognome = in.nextLine();
+        System.out.println("Aggiungi matricola:");
+        int matricola = Integer.parseInt(in.nextLine());
+        classe.aggiungi(new Studente(nome, cognome, matricola));
     }
 
     @Override

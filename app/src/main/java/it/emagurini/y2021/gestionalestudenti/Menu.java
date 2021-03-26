@@ -11,6 +11,12 @@ public interface Menu {
      */
     void stampa();
 
+    /**
+     * Fa partire l'applicazione:
+     * 1. instanzia un oggetto di tipo Scanner;
+     * 2. esegue il metodo stampa();
+     * 3. ricevete in input da tastiera una opzione del menu
+     */
     void esegui();
 
     /**
