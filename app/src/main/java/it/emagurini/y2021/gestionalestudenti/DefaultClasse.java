@@ -25,4 +25,11 @@ public class DefaultClasse implements Classe {
     public DefaultStudente getStudente(int i) {
         return this.studenti[i];
     }
+
+    public DefaultStudente cerca(int matricola) {
+        for (int i = 0; i < numStudenti(); i++)
+            if (matricola == this.studenti[i].getMatricola())
+                return this.studenti[i];
+            return null;
+    }
 }

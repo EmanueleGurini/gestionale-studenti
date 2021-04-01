@@ -29,13 +29,16 @@ public class DefaultMenu implements Menu {
             option = in.nextLine();
             if (option.equals("1")) aggiungiStudente();
             if (option.equals("2")) aggiungiEsame();
-            if (option.equals("3")) calcolaMedia();
+            if (option.equals("3")) calcolaMediaStudente();
             if (option.equals("4")) stampaStudenti();
         } while (!option.equals("x"));
     }
 
     @Override
     public void aggiungiStudente() {
+        int x = DefaultStudente.getNum();
+        System.out.println(x);
+
         System.out.println("Aggiungi nome:");
         String nome = in.nextLine();
         System.out.print("Aggiungi cognome:");
@@ -47,18 +50,27 @@ public class DefaultMenu implements Menu {
 
     @Override
     public void aggiungiEsame() {
+        int matr = Integer.parseInt(in.nextLine());
+        DefaultStudente studente = classe.cerca(matr);
+        if (studente == null) return;
 
+        System.out.println("Inserisci Esame:");
+        String esame = in.nextLine();
+        System.out.println("Inserisci Voto:");
+        int voto = Integer.parseInt(in.nextLine());
+
+        studente.aggiungiEsame(new DefaultEsame(esame, voto));
     }
 
     @Override
-    public void calcolaMedia() {
+    public void calcolaMediaStudente() {
 
     }
 
     @Override
     public void stampaStudenti() {
         for (int i = 0; i < classe.numStudenti(); i++) {
-            System.out.println(classe.getStudente(i).getNome());
+            System.out.println(classe.getStudente(i));
         }
     }
 }
