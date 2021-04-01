@@ -42,7 +42,7 @@ public class DefaultMenu implements Menu {
         String cognome = in.nextLine();
         System.out.println("Aggiungi matricola:");
         int matricola = Integer.parseInt(in.nextLine());
-        classe.aggiungi(new Studente(nome, cognome, matricola));
+        classe.aggiungi(new DefaultStudente(nome, cognome, matricola));
     }
 
     @Override
@@ -57,6 +57,8 @@ public class DefaultMenu implements Menu {
 
     @Override
     public void stampaStudenti() {
-
+        for (int i = 0; i < classe.numStudenti(); i++) {
+            System.out.println(classe.getStudente(i).getNome());
+        }
     }
 }

@@ -1,13 +1,46 @@
 package it.emagurini.y2021.gestionalestudenti;
 
-public class Studente {
-    String nome;
-    String cognome;
-    int matricola;
+public interface Studente {
 
-    public Studente(String nome, String cognome, int matricola) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.matricola = matricola;
-    }
+    /**
+     *
+     * @param esame
+     */
+    //void aggiungi(Esame esame);
+
+    /**
+     *
+     * @return
+     */
+    String getNome();
+
+    /**
+     *
+     * @param nome
+     */
+    void setNome(String nome);
+
+    /**
+     *
+     * @return cognome
+     */
+    String getCognome();
+
+    /**
+     *
+     * @param cognome
+     */
+    void setCognome(String cognome);
+
+    /**
+     *
+     * @return
+     */
+    int getMatricola();
+
+    /**
+     *
+     * @param matricola
+     */
+    void setMatricola(int matricola);
 }

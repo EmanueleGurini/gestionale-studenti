@@ -7,5 +7,10 @@ public interface Classe {
      *
      * @param studente dichiara una variabile di tipo Studente
      */
-    void aggiungi(Studente studente);
+    void aggiungi(DefaultStudente studente);
+
+    int numStudenti();
+
+    DefaultStudente getStudente(int i);
+
 }
